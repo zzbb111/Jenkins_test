@@ -7,6 +7,14 @@ pipeline{
 				sh 'python test.py'
 			}
 		}
+		
+	}
+	
+	post{
+		always {
+		// One or more steps need to be included within each condition's block.
+		emailext body: 'yeah yeah yeah', subject: 'pipeline test', to: 'zblol@qq.com'
+		}
 	}
 
 
